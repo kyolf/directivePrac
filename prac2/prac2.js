@@ -12,6 +12,7 @@ app2.controller('TodoController', function($scope){
 
 app2.directive('todoList', function(){
   return{
+    restrict: 'EA',
     templateUrl:'todo.html'
   };
 });
