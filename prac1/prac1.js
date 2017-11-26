@@ -13,6 +13,6 @@ app1.controller('TodoController', function($scope){
 
 app1.directive('todoList', function(){
   return {
-    template: 'todo-list.html'
+    templateUrl: 'todo-list.html'
   };
 });
