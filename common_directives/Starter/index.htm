@@ -43,10 +43,30 @@
                   <input type="text" data-ng-model="handle"/>
 
                 </div>
+                <!-- Directive tells the DOM what to do when it happens -->
                 <!-- ng-if would store an expression or anything that will go true or false -->
                 <div class="alert" data-ng-if="handle.length !== characters">
-                  Must be 5 characters
+                  (ng-if) Must be 5 characters
                 </div>
+                <!-- Ng-show shows the element if the expression is true -->
+                <!-- ng-hide pops up in the class when ng-show is false -->
+                <div class="alert" data-ng-show="handle.length !== characters">
+                  (ng-show) Must be 5 characters
+                </div>
+                <!-- Ng-hide hides the element when it is true -->
+                <!-- ng-show pops up in the class when ng-show is false -->
+                <div class="alert" data-ng-hide="handle.length === characters">
+                  (ng-hide) Must be 5 characters
+                </div>
+                <!-- Ng-class takes in a JSON object and adds the 
+                  property into class once the condtion is satisfied -->
+                  <div class="alert" 
+                  ng-class='{"alert-warning": handle.length < characters,
+                             "alert-danger": handle.length > characters
+                  }' 
+                  data-ng-hide="handle.length === characters">
+                    (ng-hide) Must be 5 characters
+                  </div>
                 <hr/>
                 <h1>twitter.com/{{handle | uppercase}}</h1>
             </div>
