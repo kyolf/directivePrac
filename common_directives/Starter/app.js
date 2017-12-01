@@ -5,5 +5,6 @@ myApp.controller('mainController', ['$scope', '$filter', function($scope, $filte
   $scope.handleUpper = function () {
     return $filter('uppercase')($scope.handle);
   };  
-  
+
+  $scope.characters = 5;
 }]);
