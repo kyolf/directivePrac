@@ -41,7 +41,10 @@ myApp.directive("searchResult", function() {
         <p>
           555 Main St., New York 12345
         </p>
-      </a>`
-
+      </a>`,
+    //By default, replace is false
+    //When set to true, it replaces the directive 
+    //name with the directive's template
+    replace: true
   };
 });
