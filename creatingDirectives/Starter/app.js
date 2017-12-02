@@ -24,9 +24,17 @@ myApp.config(function ($routeProvider) {
 myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
   $scope.person = {
     name: "Jack",
-    address: "kek kek" 
-  }
+    address: "kek kek",
+    city: 'lalal',
+    state: 'CA',
+    zip: '12345' 
+  };
   
+  $scope.formattedAddress = function (person) {
+    return person.address + ', ' + person.city + ', ' + person.state
+    + ' ' + person.zip;
+  };
+
     
 }]);
 
@@ -58,6 +66,8 @@ myApp.directive("searchResult", function() {
       //= means a 2 way binding on the object or text
       //can affect the scope object that you pass in
       personObject:"=",
+      //& means that this prop stores a function
+      formattedAddressFunction: "&"
     }
   };
 });
