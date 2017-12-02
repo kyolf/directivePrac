@@ -36,6 +36,7 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams', function
     
 }]);
 
+//Intent: Reusable objects that does a certain functionality
 myApp.directive("searchResult", function() {
   return {
     //Best Practice to put as first element
@@ -54,7 +55,8 @@ myApp.directive("searchResult", function() {
       //can do personNameSpec: "@personName"
       personName: "@",
       personAddress:"@",
-      //= means a 2 way binding on the object
+      //= means a 2 way binding on the object or text
+      //can affect the scope object that you pass in
       personObject:"=",
     }
   };
