@@ -41,13 +41,7 @@ myApp.directive("searchResult", function() {
     //C - class
     //M - comments
     restrict: 'EACM',
-    template:`
-      <a href="#">
-        <h4>Doe, John</h4>
-        <p>
-          555 Main St., New York 12345
-        </p>
-      </a>`,
+    templateUrl: 'directives/searchresult.html',
     //By default, replace is false
     //When set to true, it replaces the directive 
     //name with the directive's template
