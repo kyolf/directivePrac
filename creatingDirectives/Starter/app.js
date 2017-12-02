@@ -22,8 +22,11 @@ myApp.config(function ($routeProvider) {
 });
 
 myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
-    
-    
+  $scope.person = {
+    name: "Jack",
+    address: "kek kek" 
+  }
+  
     
 }]);
 
@@ -40,11 +43,17 @@ myApp.directive("searchResult", function() {
     //A - Attribute
     //C - class
     //M - comments
-    restrict: 'EACM',
+    restrict: 'EA',
     templateUrl: 'directives/searchresult.html',
     //By default, replace is false
     //When set to true, it replaces the directive 
     //name with the directive's template
-    replace: true
+    replace: true,
+    scope: {
+      //@ means text or string
+      //can do personNameSpec: "@personName"
+      personName: "@",
+      personAddress:"@"
+    }
   };
 });
