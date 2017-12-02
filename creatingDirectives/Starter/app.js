@@ -53,7 +53,9 @@ myApp.directive("searchResult", function() {
       //@ means text or string
       //can do personNameSpec: "@personName"
       personName: "@",
-      personAddress:"@"
+      personAddress:"@",
+      //= means a 2 way binding on the object
+      personObject:"=",
     }
   };
 });
