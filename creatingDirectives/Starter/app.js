@@ -35,6 +35,12 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams', function
 
 myApp.directive("searchResult", function() {
   return {
+    //Best Practice to put as first element
+    //E - element
+    //A - Attribute
+    //C - class
+    //M - comments
+    restrict: 'EACM',
     template:`
       <a href="#">
         <h4>Doe, John</h4>
