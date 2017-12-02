@@ -32,3 +32,16 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams', function
     
     
 }]);
+
+myApp.directive("searchResult", function() {
+  return {
+    template:`
+      <a href="#">
+        <h4>Doe, John</h4>
+        <p>
+          555 Main St., New York 12345
+        </p>
+      </a>`
+
+  };
+});
