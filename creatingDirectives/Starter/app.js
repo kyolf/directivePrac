@@ -68,6 +68,47 @@ myApp.directive("searchResult", function() {
       personObject:"=",
       //& means that this prop stores a function
       formattedAddressFunction: "&"
-    }
+    },
+    //Expects its value to be a function
+    //Compiles 1 time
+    //Compiles what is in the templateUrl or template
+    
+    //Compile means that I can change my directive on the fly
+    //before it gets used
+    compile: function(elem, attrs) {
+      console.log('Compiling');
+
+      //removes the class attribute
+      //elem.removeAttr('class');
+
+      //allows me to see whats inside the root tag of the directive
+      console.log(elem.html());
+      return {
+        //Two properties: pre for prelinking and post for post linking
+        
+        //Link is run everytime the directive is used
+
+        //These functions get called however many times you ng-repeat it
+        //because each time you call it, the directives will
+        //have a unique isolated scope
+
+        //Compiles the directive, then runs pre-link
+        //After that, find any other directive inside this directive
+        //and compiles it and runs pre-link. Does this cycle until it
+        //hits the bottom
+        //Once it hits the bottom, it runs post-link back up the cycle
+        
+        //Post-link is safer than pre-link because you know what you 
+        //need to deal with.
+        pre: function(scope, element, attrs){
+          console.log('Pre-linking');
+          console.log(element);
+        },
+        post: function(scope, element, attrs){
+          console.log('Post-linking');
+          console.log(element);
+        }
+      };
+    },
   };
 });
