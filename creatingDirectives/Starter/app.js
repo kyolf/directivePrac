@@ -128,6 +128,11 @@ myApp.directive("searchResult", function() {
     //depending on list size
     link: function(scope, element, attrs) {
 
-    }
+    },
+    //Default: false
+    //if you want to include whatever is in ur custom directive in the
+    //templateUrl, then you need to set this to true
+    //and do a ng-transclude in templateUrl
+    transclude: false
   };
 });
