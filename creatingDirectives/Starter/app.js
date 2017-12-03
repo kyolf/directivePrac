@@ -122,5 +122,12 @@ myApp.directive("searchResult", function() {
         }
       };
     },
+    //post can instantiated like this inside of writing
+    //compiler -> return post
+    //can potentially slow the performance of a page
+    //depending on list size
+    link: function(scope, element, attrs) {
+
+    }
   };
 });
