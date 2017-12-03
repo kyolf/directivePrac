@@ -104,9 +104,21 @@ myApp.directive("searchResult", function() {
           console.log('Pre-linking');
           console.log(element);
         },
+        //scope is the model
+        //element is the view
         post: function(scope, element, attrs){
           console.log('Post-linking');
           console.log(element);
+
+          //Want to do this if w.e. you need to do
+          //cant be done in the templateUrl
+          //Ex: removing a class under a certain situtation
+          
+          //Do this if you want to do something b4 it is displayed
+          //onto the DOM
+          if(scope.personObject.name === "Jack"){
+            element.removeAttribute();
+          }
         }
       };
     },
